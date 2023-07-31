@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>        
+    <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+    <script>
+    var backend;
+    new QWebChannel(qt.webChannelTransport, function (channel) {
+        backend = channel.objects.backend;
+        let uid = {{uid|tojson|safe}};
+        backend.foo(uid);
+    });
+    </script>
+  </head>
+  <body>
+    <h1>Login success!!</h1>
+  </body>
+</html>
